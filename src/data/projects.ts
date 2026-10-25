@@ -8,13 +8,13 @@ export const projects: Project[] = [
     category: 'crm',
     status: 'desenvolvimento',
     shortDescription:
-      'Sistema de gestão de leads, avaliações e orçamentos para clínicas odontológicas, com funil de vendas em Kanban.',
+      'Sistema de gestão para clínicas odontológicas: leads do WhatsApp, pacientes, agenda, tratamentos, orçamentos, financeiro e tarefas.',
     description:
       'Um sistema CRM desenvolvido especificamente para clínicas odontológicas, que centraliza o acompanhamento de potenciais pacientes desde o primeiro contato até o fechamento do tratamento.',
     problem:
       'Clínicas odontológicas frequentemente perdem potenciais pacientes por falta de acompanhamento estruturado após o primeiro contato. Ligações sem retorno, avaliações sem follow-up e orçamentos esquecidos representam oportunidades comerciais desperdiçadas.',
     objective:
-      'Criar um sistema de gestão de leads e oportunidades adaptado à realidade de clínicas odontológicas, com funil visual, registro de interações e controle de avaliações e orçamentos.',
+      'Criar um sistema de gestão adaptado à realidade de clínicas odontológicas, que reúne leads vindos do WhatsApp, pacientes, agenda, tratamentos, orçamentos e financeiro em um só lugar.',
     technologies: [
       { name: 'React' },
       { name: 'TypeScript' },
@@ -24,24 +24,63 @@ export const projects: Project[] = [
       { name: 'Docker' },
     ],
     features: [
-      'Funil de vendas em Kanban com etapas personalizáveis',
-      'Cadastro de pacientes e leads',
-      'Registro de histórico de interações',
-      'Controle de avaliações agendadas',
-      'Gestão de orçamentos enviados',
-      'Dashboard com indicadores principais',
-      'Interface responsiva para celular e computador',
+      'Dashboard com indicadores de pacientes, leads, consultas, orçamentos e tarefas',
+      'Leads e funil de atendimento com contatos recebidos pelo WhatsApp',
+      'Cadastro e consulta de pacientes',
+      'Agenda de consultas com bloqueio de conflito de horário por dentista',
+      'Planos de tratamento vinculados a pacientes e dentistas',
+      'Orçamentos com itens e totais calculados no banco de dados',
+      'Controle financeiro de parcelas e recebimentos',
+      'Tarefas de retorno e confirmação para a equipe',
+      'Configuração de dados da clínica, dentistas e procedimentos',
+      'Acesso com login e permissões controladas pelo Supabase',
     ],
-    // Para mostrar a galeria, coloque as imagens em public/projetos/ e liste aqui, por exemplo:
-    // screenshots: [
-    //   { url: '/projetos/crm-kanban.png', alt: 'Funil Kanban do CRM', caption: 'Funil de vendas em Kanban' },
-    //   { url: '/projetos/crm-dashboard.png', alt: 'Dashboard do CRM', caption: 'Dashboard de indicadores' },
-    // ],
-    screenshots: [],
+    screenshots: [
+      {
+        url: '/projetos/crm-dashboard.jpg',
+        alt: 'Tela de dashboard do CRM odontológico com cartões de indicadores',
+        caption: 'Dashboard com indicadores de pacientes, leads, consultas, orçamentos e tarefas',
+      },
+      {
+        url: '/projetos/crm-leads.jpg',
+        alt: 'Tela de leads e funil do CRM odontológico com contatos recebidos pelo WhatsApp',
+        caption: 'Leads e funil: contatos recebidos pelo WhatsApp e cadastrados no CRM',
+      },
+      {
+        url: '/projetos/crm-pacientes.jpg',
+        alt: 'Tela de cadastro e lista de pacientes do CRM odontológico',
+        caption: 'Cadastro e consulta de pacientes',
+      },
+      {
+        url: '/projetos/crm-agenda.jpg',
+        alt: 'Tela de agenda de consultas do CRM odontológico',
+        caption: 'Agenda de consultas com bloqueio de conflito de horário por dentista',
+      },
+      {
+        url: '/projetos/crm-tratamentos.jpg',
+        alt: 'Tela de planos de tratamento do CRM odontológico',
+        caption: 'Planos de tratamento vinculados a pacientes e dentistas',
+      },
+      {
+        url: '/projetos/crm-orcamentos.jpg',
+        alt: 'Tela de orçamentos do CRM odontológico',
+        caption: 'Orçamentos com itens, validade e totais calculados pelo banco',
+      },
+      {
+        url: '/projetos/crm-financeiro.jpg',
+        alt: 'Tela financeira do CRM odontológico com parcelas e recebimentos',
+        caption: 'Controle financeiro de parcelas e recebimentos',
+      },
+      {
+        url: '/projetos/crm-tarefas.jpg',
+        alt: 'Tela de tarefas da equipe do CRM odontológico',
+        caption: 'Tarefas de retorno, confirmação e acompanhamento da equipe',
+      },
+    ],
     learnings: [
       'Modelagem de banco de dados relacional para CRM',
       'Implementação de autenticação com Supabase',
-      'Desenvolvimento de interfaces Kanban interativas',
+      'Agenda com bloqueio de conflito de horário por dentista direto no banco',
       'Integração entre Supabase e n8n via webhooks',
     ],
     futurePlans: [
