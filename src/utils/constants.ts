@@ -20,7 +20,7 @@ export const REGION = 'São Paulo, SP';
 // Social
 export const SOCIAL_LINKS = {
   github: 'https://github.com/DouglasFBezerra',
-  linkedin: 'https://linkedin.com',
+  linkedin: 'https://www.linkedin.com/in/douglasbezerra0608/',
 };
 
 // SEO padrão
