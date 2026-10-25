@@ -33,11 +33,11 @@ export default function BlogPost() {
     publisher: {
       '@type': 'Organization',
       name: 'Douglas Soluções Digitais',
-      url: 'https://douglassolucoes.com.br',
+      url: 'https://douglassolucoes.vercel.app',
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://douglassolucoes.com.br/blog/${post.slug}`,
+      '@id': `https://douglassolucoes.vercel.app/blog/${post.slug}`,
     },
   };
 

@@ -33,7 +33,7 @@ export default function Servicos() {
         '@type': 'Service',
         name: s.title,
         description: s.description,
-        url: `https://douglassolucoes.com.br/${s.slug}`,
+        url: `https://douglassolucoes.vercel.app/${s.slug}`,
       },
     })),
   };

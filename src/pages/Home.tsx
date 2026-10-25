@@ -181,7 +181,7 @@ export default function Home() {
     '@type': 'ProfessionalService',
     name: SITE_NAME,
     description: SITE_DESCRIPTION,
-    url: 'https://douglassolucoes.com.br',
+    url: 'https://douglassolucoes.vercel.app',
     areaServed: [
       { '@type': 'City', name: 'São Paulo', containedInPlace: { '@type': 'State', name: 'São Paulo' } },
       { '@type': 'Country', name: 'Brasil' },

@@ -1,6 +1,6 @@
 // Constantes globais do site
 export const SITE_NAME = 'Douglas Soluções Digitais';
-export const SITE_URL = 'https://douglassolucoes.com.br';
+export const SITE_URL = 'https://douglassolucoes.vercel.app';
 export const SITE_SLOGAN = 'Ideias em tecnologia, resultados no seu negócio.';
 export const SITE_DESCRIPTION =
   'A Douglas Soluções Digitais desenvolve sites profissionais, sistemas CRM personalizados e automações com n8n para empresas que desejam fortalecer sua presença on-line, organizar seus processos e melhorar o relacionamento com seus clientes.';

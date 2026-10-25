@@ -2,73 +2,73 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Páginas Institucionais e Principais -->
   <url>
-    <loc>https://douglassolucoes.com.br/</loc>
+    <loc>https://douglassolucoes.vercel.app/</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/servicos</loc>
+    <loc>https://douglassolucoes.vercel.app/servicos</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/criacao-de-sites</loc>
+    <loc>https://douglassolucoes.vercel.app/criacao-de-sites</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/desenvolvimento-crm</loc>
+    <loc>https://douglassolucoes.vercel.app/desenvolvimento-crm</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/automacao-n8n</loc>
+    <loc>https://douglassolucoes.vercel.app/automacao-n8n</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/cardapios-digitais</loc>
+    <loc>https://douglassolucoes.vercel.app/cardapios-digitais</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/projetos</loc>
+    <loc>https://douglassolucoes.vercel.app/projetos</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/projetos/crm-odontologico</loc>
+    <loc>https://douglassolucoes.vercel.app/projetos/crm-odontologico</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/projetos/automacao-captacao-leads</loc>
+    <loc>https://douglassolucoes.vercel.app/projetos/automacao-captacao-leads</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/projetos/site-institucional-demo</loc>
+    <loc>https://douglassolucoes.vercel.app/projetos/site-institucional-demo</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/conhecimentos</loc>
+    <loc>https://douglassolucoes.vercel.app/conhecimentos</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/blog</loc>
+    <loc>https://douglassolucoes.vercel.app/blog</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
@@ -76,37 +76,37 @@
 
   <!-- Artigos do Blog -->
   <url>
-    <loc>https://douglassolucoes.com.br/blog/o-que-e-crm-como-ajuda-pequenas-empresas</loc>
+    <loc>https://douglassolucoes.vercel.app/blog/o-que-e-crm-como-ajuda-pequenas-empresas</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/blog/como-automatizar-processos-com-n8n</loc>
+    <loc>https://douglassolucoes.vercel.app/blog/como-automatizar-processos-com-n8n</loc>
     <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/blog/como-site-profissional-ajuda-conquistar-clientes</loc>
+    <loc>https://douglassolucoes.vercel.app/blog/como-site-profissional-ajuda-conquistar-clientes</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/blog/crm-odontologico-leads-avaliacoes-orcamentos</loc>
+    <loc>https://douglassolucoes.vercel.app/blog/crm-odontologico-leads-avaliacoes-orcamentos</loc>
     <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/blog/cardapio-digital-vantagens-restaurantes-pizzarias</loc>
+    <loc>https://douglassolucoes.vercel.app/blog/cardapio-digital-vantagens-restaurantes-pizzarias</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/blog/seo-geo-buscas-tradicionais-mecanismos-ia</loc>
+    <loc>https://douglassolucoes.vercel.app/blog/seo-geo-buscas-tradicionais-mecanismos-ia</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -114,43 +114,43 @@
 
   <!-- Institucional & Contato -->
   <url>
-    <loc>https://douglassolucoes.com.br/sobre</loc>
+    <loc>https://douglassolucoes.vercel.app/sobre</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/contato</loc>
+    <loc>https://douglassolucoes.vercel.app/contato</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/politica-de-privacidade</loc>
+    <loc>https://douglassolucoes.vercel.app/politica-de-privacidade</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/projetos/sites-clinicas-odontologicas</loc>
+    <loc>https://douglassolucoes.vercel.app/projetos/sites-clinicas-odontologicas</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/projetos/cardapio-digital-pizzaria</loc>
+    <loc>https://douglassolucoes.vercel.app/projetos/cardapio-digital-pizzaria</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/projetos/agente-whatsapp-clinica</loc>
+    <loc>https://douglassolucoes.vercel.app/projetos/agente-whatsapp-clinica</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://douglassolucoes.com.br/projetos/atendimento-delivery-ia</loc>
+    <loc>https://douglassolucoes.vercel.app/projetos/atendimento-delivery-ia</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

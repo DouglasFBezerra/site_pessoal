@@ -112,7 +112,7 @@ npm run preview
 ## 🎯 Configuração do Domínio Personalizado
 
 1. No painel do seu projeto na Vercel, vá em **Settings** > **Domains**.
-2. Digite seu domínio (ex: `douglassolucoes.com.br`).
+2. Digite seu domínio (ex: `douglassolucoes.vercel.app`).
 3. Configure os apontamentos DNS no seu registrador (ex: Registro.br):
    - **Tipo A:** Apontando para o IP indicado pela Vercel (`76.76.21.21`).
    - **Tipo CNAME (www):** `cname.vercel-dns.com`.
@@ -123,10 +123,10 @@ npm run preview
 ## 🔍 Google Search Console & Indexação
 
 1. Acesse [search.google.com/search-console](https://search.google.com/search-console).
-2. Adicione sua propriedade (`https://douglassolucoes.com.br` ou via prefixo de URL).
+2. Adicione sua propriedade (`https://douglassolucoes.vercel.app` ou via prefixo de URL).
 3. Verifique a propriedade via registro DNS TXT ou tag HTML.
 4. No menu lateral, clique em **Sitemaps**.
-5. Insira a URL do sitemap: `https://douglassolucoes.com.br/sitemap.xml` e clique em **Enviar**.
+5. Insira a URL do sitemap: `https://douglassolucoes.vercel.app/sitemap.xml` e clique em **Enviar**.
 6. O Google processará o sitemap e começará a indexar as páginas gradualmente.
 
 ---

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://douglassolucoes.com.br/sitemap.xml
+Sitemap: https://douglassolucoes.vercel.app/sitemap.xml
