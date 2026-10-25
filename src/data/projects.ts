@@ -93,44 +93,168 @@ export const projects: Project[] = [
   },
   {
     id: 'automacao-captacao-leads',
-    title: 'Automação de Captação de Leads',
+    title: 'Prospecção e Qualificação Automática de Leads',
     slug: 'automacao-captacao-leads',
     category: 'automacao',
     status: 'prototipo',
     shortDescription:
-      'Fluxo automatizado com n8n para captar, qualificar e organizar leads recebidos por formulários e WhatsApp.',
+      'Dois fluxos n8n: um busca negócios sem site no Google Places e grava em planilha; o outro usa um agente de IA para conversar com o lead e classificá-lo.',
     description:
-      'Fluxo de automação desenvolvido em n8n para processar leads recebidos por diferentes canais, qualificá-los com base em critérios definidos e registrá-los automaticamente no CRM.',
+      'Conjunto de automações em n8n para encontrar clientes em potencial e qualificá-los. Um fluxo faz a prospecção de empresas sem site por cidade e grava a lista no Google Sheets. Outro conduz a conversa com o lead por meio de um agente de IA, registra tudo no Supabase e marca o lead como qualificado ou desqualificado.',
     problem:
-      'Receber leads por múltiplos canais (formulário do site, WhatsApp, redes sociais) e organizar manualmente essas informações consome tempo e aumenta o risco de perder contatos importantes.',
+      'Encontrar empresas que precisam de um site e conversar com cada contato consome horas. Sem um processo, bons contatos se perdem e leads sem perfil tomam o tempo de quem atende.',
     objective:
-      'Automatizar o processo de captação e registro de leads, reduzindo o trabalho manual e garantindo que nenhuma oportunidade seja esquecida.',
+      'Automatizar a busca de oportunidades e a primeira triagem, para que o tempo seja gasto apenas com leads qualificados.',
     technologies: [
       { name: 'n8n' },
-      { name: 'Docker' },
-      { name: 'PostgreSQL' },
-      { name: 'Webhooks' },
+      { name: 'Google Places API' },
+      { name: 'Google Sheets' },
+      { name: 'Supabase' },
+      { name: 'OpenAI' },
     ],
     features: [
-      'Recebimento de leads por webhook',
-      'Validação e normalização dos dados',
-      'Registro automático no banco de dados',
-      'Notificação por canal configurável',
-      'Deduplicação de leads existentes',
+      'Busca de negócios por cidade e termo no Google Places',
+      'Filtro automático de empresas que ainda não têm site',
+      'Remoção de contatos duplicados antes de gravar',
+      'Gravação dos leads em planilha do Google Sheets',
+      'Agente de IA que conversa com o lead e o classifica como qualificado ou desqualificado',
+      'Cadastro e atualização do lead no Supabase',
+      'Memória da conversa para manter o contexto',
     ],
-    screenshots: [],
+    screenshots: [
+      {
+        url: '/projetos/n8n-prospeccao.png',
+        alt: 'Diagrama do fluxo n8n de prospecção: busca no Google Places, filtro de empresas sem site e gravação no Google Sheets',
+        caption: 'Fluxo de prospecção: Google Places → filtro → Google Sheets',
+      },
+      {
+        url: '/projetos/n8n-qualificacao.png',
+        alt: 'Diagrama do fluxo n8n de qualificação de leads com agente de IA, Supabase e ferramentas de classificação',
+        caption: 'Fluxo de qualificação: agente de IA + Supabase',
+      },
+    ],
     learnings: [
-      'Criação de workflows complexos com n8n',
-      'Tratamento de dados e validações em nós de código',
-      'Integração entre n8n e bancos de dados PostgreSQL',
-      'Hospedagem do n8n em ambiente Docker',
+      'Integração do n8n com a API do Google Places',
+      'Filtragem e remoção de duplicados em nós de código',
+      'Criação de agente de IA com memória e ferramentas (tools) no n8n',
+      'Persistência e atualização de leads no Supabase',
     ],
     futurePlans: [
-      'Qualificação automática com pontuação de leads',
-      'Integração com mais canais de captação',
+      'Envio automático da primeira mensagem de abordagem',
+      'Pontuação de leads por perfil',
       'Relatório semanal automatizado',
     ],
     featured: true,
+  },
+  {
+    id: 'agente-whatsapp-clinica',
+    title: 'Agente de WhatsApp para Clínicas',
+    slug: 'agente-whatsapp-clinica',
+    category: 'automacao',
+    status: 'prototipo',
+    shortDescription:
+      'Automação de WhatsApp para clínicas: confirma consultas, cria tarefas para a recepção, atende novos contatos com IA e envia lembretes automáticos.',
+    description:
+      'Fluxos n8n ligados ao CRM da clínica e ao WhatsApp. As mensagens chegam por webhook, o fluxo identifica se quem escreveu é paciente ou um contato novo e segue o caminho certo: confirmar consulta, avisar a recepção ou deixar um agente de IA atender, consultar horários livres e marcar a consulta. Outro fluxo envia lembretes de consulta automaticamente.',
+    problem:
+      'A recepção perde tempo confirmando consultas e respondendo as mesmas dúvidas pelo WhatsApp, e contatos novos ficam sem resposta fora do horário de atendimento.',
+    objective:
+      'Automatizar confirmações, lembretes e o primeiro atendimento, mantendo tudo registrado no CRM e passando para a recepção apenas o que exige uma pessoa.',
+    technologies: [
+      { name: 'n8n' },
+      { name: 'Evolution API' },
+      { name: 'OpenAI' },
+      { name: 'Supabase' },
+    ],
+    features: [
+      'Recebimento das mensagens por webhook, sem processar a mesma mensagem duas vezes',
+      'Identificação automática de paciente ou contato novo',
+      'Confirmação de consulta pela resposta do paciente, com atualização no CRM',
+      'Criação de tarefa para a recepção quando o paciente pede contato',
+      'Cadastro e atualização automática de leads, com registro da conversa',
+      'Agente de IA que atende o lead, consulta horários livres e marca a consulta no CRM',
+      'Lembretes de consulta a cada 15 minutos, enviados uma única vez por consulta',
+      'Registro de falhas no envio das mensagens',
+    ],
+    screenshots: [
+      {
+        url: '/projetos/n8n-clinica-mensagens.png',
+        alt: 'Diagrama do fluxo n8n que trata mensagens de WhatsApp de pacientes e leads, com agente de IA e integração ao CRM',
+        caption: 'Mensagens recebidas: pacientes, leads e agente de IA',
+      },
+      {
+        url: '/projetos/n8n-clinica-lembretes.png',
+        alt: 'Diagrama do fluxo n8n de lembretes automáticos de consulta enviados por WhatsApp',
+        caption: 'Lembretes automáticos de consulta',
+      },
+    ],
+    learnings: [
+      'Envio idempotente de mensagens para evitar lembretes duplicados',
+      'Integração do n8n com Evolution API e com o CRM por requisições HTTP',
+      'Agente de IA com ferramentas para consultar agenda e marcar consultas',
+      'Separação de fluxos por tipo de remetente',
+    ],
+    futurePlans: [
+      'Remarcação de consultas pelo WhatsApp',
+      'Painel com taxa de confirmação por período',
+      'Pesquisa de satisfação após a consulta',
+    ],
+    featured: true,
+  },
+  {
+    id: 'atendimento-delivery-ia',
+    title: 'Atendimento de Delivery com Agente de IA',
+    slug: 'atendimento-delivery-ia',
+    category: 'automacao',
+    status: 'prototipo',
+    shortDescription:
+      'Agente de IA no WhatsApp que atende pedidos de delivery, consulta o cardápio, envia o PDF, registra o pedido e atualiza o endereço do cliente.',
+    description:
+      'Fluxo n8n que atende clientes de delivery pelo WhatsApp. O agente junta as mensagens enviadas em sequência, responde dúvidas com base no cardápio (RAG), envia o cardápio em PDF, registra o pedido em planilha e atualiza o endereço do cliente. Há ainda rotinas de apoio: atualização automática da base de conhecimento a partir do Google Drive e uma página para imprimir os pedidos.',
+    problem:
+      'Pedidos por WhatsApp costumam chegar em várias mensagens picadas, fora de ordem e a qualquer hora, e o atendente precisa repetir cardápio, preços e regras o tempo todo.',
+    objective:
+      'Automatizar o atendimento do delivery, do primeiro contato ao registro do pedido, e manter as informações da loja atualizadas sem mexer no fluxo.',
+    technologies: [
+      { name: 'n8n' },
+      { name: 'OpenAI' },
+      { name: 'Evolution API' },
+      { name: 'Supabase' },
+      { name: 'Redis' },
+      { name: 'Google Sheets' },
+      { name: 'Google Drive' },
+    ],
+    features: [
+      'Agente de IA para atendimento e pedidos de delivery pelo WhatsApp',
+      'Agrupamento das mensagens do cliente (Redis) antes de responder',
+      'Aceita texto e áudio e avisa quando recebe imagem, que não é lida',
+      'Cadastro automático do cliente no banco de dados',
+      'Consulta ao cardápio e às regras da loja com RAG (Supabase Vector Store)',
+      'Envio do cardápio em PDF pelo WhatsApp',
+      'Atualização do endereço do cliente',
+      'Registro do pedido em planilha do Google Sheets',
+      'Atualização da base de conhecimento a partir de arquivos do Google Drive',
+      'Página de impressão dos pedidos',
+    ],
+    screenshots: [
+      {
+        url: '/projetos/n8n-delivery.png',
+        alt: 'Diagrama do fluxo n8n de atendimento de delivery com agente de IA, ferramentas, base de conhecimento e página de impressão',
+        caption: 'Fluxo completo: agente de IA, ferramentas e rotinas de apoio',
+      },
+    ],
+    learnings: [
+      'Agrupamento de mensagens com Redis para o agente responder uma única vez',
+      'RAG com embeddings e Supabase Vector Store',
+      'Agentes com ferramentas e sub-fluxos reutilizáveis no n8n',
+      'Geração de página HTML a partir de dados de planilha',
+    ],
+    futurePlans: [
+      'Cálculo de taxa de entrega por região',
+      'Cupons de desconto',
+      'Painel com pedidos e produtos mais vendidos',
+    ],
+    featured: false,
   },
   {
     id: 'sites-clinicas-odontologicas',

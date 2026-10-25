@@ -60,25 +60,17 @@ export function ImageCarousel({ images, autoPlayMs = 5000 }: ImageCarouselProps)
         aria-label="Galeria de imagens do projeto"
       >
         <div
-          className="relative aspect-video overflow-hidden rounded-xl bg-slate-950/60"
+          className="relative overflow-hidden rounded-xl bg-slate-950/60"
           onTouchStart={(e) => (touchStartX.current = e.touches[0].clientX)}
           onTouchEnd={onTouchEnd}
         >
-          <div
-            className="flex h-full transition-transform duration-500 ease-out"
-            style={{ transform: `translateX(-${index * 100}%)` }}
-          >
-            {images.map((img, i) => (
-              <img
-                key={img.url}
-                src={img.url}
-                alt={img.alt}
-                loading={i === 0 ? 'eager' : 'lazy'}
-                className="h-full w-full flex-shrink-0 object-contain"
-                draggable={false}
-              />
-            ))}
-          </div>
+          <img
+            key={current.url}
+            src={current.url}
+            alt={current.alt}
+            className="mx-auto block max-h-[75vh] w-full animate-fade-in object-contain"
+            draggable={false}
+          />
 
           <button
             type="button"
