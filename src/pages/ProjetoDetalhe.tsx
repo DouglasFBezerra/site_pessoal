@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { ArrowLeft, CheckCircle2, Sparkles, MessageCircle, Layers } from 'lucide-react';
 import { SEO } from '../components/seo/SEO';
 import { Section, Card, Badge } from '../components/ui/index';
+import { ImageCarousel } from '../components/ui/ImageCarousel';
 import { getProjectBySlug, getCategoryLabel, getStatusLabel } from '../data/projects';
 import { useWhatsApp } from '../hooks/useWhatsApp';
 
@@ -65,6 +66,15 @@ export default function ProjetoDetalhe() {
           </div>
         </div>
       </section>
+
+      {project.screenshots.length > 0 && (
+        <Section>
+          <h2 className="text-2xl font-bold text-white mb-6">Veja o projeto na prática</h2>
+          <div className="max-w-4xl mx-auto">
+            <ImageCarousel images={project.screenshots} />
+          </div>
+        </Section>
+      )}
 
       <Section dark>
         <div className="grid lg:grid-cols-2 gap-10">

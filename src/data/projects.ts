@@ -32,6 +32,11 @@ export const projects: Project[] = [
       'Dashboard com indicadores principais',
       'Interface responsiva para celular e computador',
     ],
+    // Para mostrar a galeria, coloque as imagens em public/projetos/ e liste aqui, por exemplo:
+    // screenshots: [
+    //   { url: '/projetos/crm-kanban.png', alt: 'Funil Kanban do CRM', caption: 'Funil de vendas em Kanban' },
+    //   { url: '/projetos/crm-dashboard.png', alt: 'Dashboard do CRM', caption: 'Dashboard de indicadores' },
+    // ],
     screenshots: [],
     learnings: [
       'Modelagem de banco de dados relacional para CRM',
