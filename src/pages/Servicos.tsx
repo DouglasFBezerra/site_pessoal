@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Globe, LayoutDashboard, Zap, UtensilsCrossed, ArrowRight, MessageCircle } from 'lucide-react';
 import { SEO } from '../components/seo/SEO';
-import { Section, SectionHeader, Card } from '../components/ui/index';
+import { Section, Card } from '../components/ui/index';
 import { services } from '../data/services';
 import { useWhatsApp } from '../hooks/useWhatsApp';
 

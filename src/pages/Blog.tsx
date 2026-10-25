@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, Clock, BookOpen } from 'lucide-react';
+import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { SEO } from '../components/seo/SEO';
-import { Section, SectionHeader, Card, Badge } from '../components/ui/index';
+import { Section, Card, Badge } from '../components/ui/index';
 import { blogPosts, getCategoryLabel } from '../data/blog-posts';
 import type { BlogCategory } from '../types';
 

@@ -19,7 +19,7 @@ export const REGION = 'São Paulo, SP';
 
 // Social
 export const SOCIAL_LINKS = {
-  github: 'https://github.com',
+  github: 'https://github.com/DouglasFBezerra',
   linkedin: 'https://linkedin.com',
 };
 

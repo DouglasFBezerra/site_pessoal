@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { LayoutDashboard, CheckCircle2, ArrowRight, MessageCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
 import { SEO } from '../components/seo/SEO';
-import { Section, SectionHeader, Card, Badge } from '../components/ui/index';
+import { Section, SectionHeader, Badge } from '../components/ui/index';
 import { getServiceBySlug } from '../data/services';
 import { useWhatsApp } from '../hooks/useWhatsApp';
 

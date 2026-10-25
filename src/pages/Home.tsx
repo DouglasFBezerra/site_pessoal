@@ -4,7 +4,7 @@ import {
   Globe, LayoutDashboard, Zap, UtensilsCrossed,
   ArrowRight, CheckCircle2, ChevronDown, ChevronUp,
   MessageCircle, Scale, Stethoscope, Briefcase,
-  AlertCircle, Sparkles, HelpCircle
+  AlertCircle, HelpCircle
 } from 'lucide-react';
 import { SEO } from '../components/seo/SEO';
 import { Section, SectionHeader, Card, Badge } from '../components/ui/index';

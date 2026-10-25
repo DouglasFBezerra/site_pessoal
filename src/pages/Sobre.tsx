@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
-import { Target, ShieldCheck, Cpu, ArrowRight, MessageCircle } from 'lucide-react';
+import { Target, ShieldCheck, Cpu, MessageCircle } from 'lucide-react';
 import { SEO } from '../components/seo/SEO';
-import { Section, SectionHeader, Card } from '../components/ui/index';
+import { Section, Card } from '../components/ui/index';
 import { useWhatsApp } from '../hooks/useWhatsApp';
-import { SITE_NAME } from '../utils/constants';
 
 export default function Sobre() {
   const { open: openWhatsApp } = useWhatsApp();

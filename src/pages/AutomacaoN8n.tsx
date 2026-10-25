@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Zap, CheckCircle2, ArrowRight, MessageCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import { Zap, CheckCircle2, MessageCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
 import { SEO } from '../components/seo/SEO';
 import { Section, SectionHeader, Badge } from '../components/ui/index';

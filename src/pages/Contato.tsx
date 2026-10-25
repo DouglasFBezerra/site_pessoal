@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { MessageCircle, Mail, MapPin, Send, CheckCircle2 } from 'lucide-react';
 import { SEO } from '../components/seo/SEO';
-import { Section, SectionHeader, Card } from '../components/ui/index';
+import { Section, Card } from '../components/ui/index';
 import { useWhatsApp } from '../hooks/useWhatsApp';
-import { WHATSAPP_URL, CONTACT_EMAIL, REGION } from '../utils/constants';
+import { CONTACT_EMAIL, REGION } from '../utils/constants';
 
 export default function Contato() {
   const { buildLink } = useWhatsApp();

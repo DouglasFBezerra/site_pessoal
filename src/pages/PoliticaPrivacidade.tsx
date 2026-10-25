@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Shield } from 'lucide-react';
 import { SEO } from '../components/seo/SEO';
-import { Section, Card } from '../components/ui/index';
+import { Card } from '../components/ui/index';
 import { SITE_NAME, CONTACT_EMAIL } from '../utils/constants';
 
 export default function PoliticaPrivacidade() {

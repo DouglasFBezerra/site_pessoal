@@ -1,4 +1,4 @@
-import { Code2, Server, Workflow, Wrench, CheckCircle } from 'lucide-react';
+import { Code2, Server, Workflow, Wrench } from 'lucide-react';
 import { SEO } from '../components/seo/SEO';
 import { Section, SectionHeader, Card, Badge } from '../components/ui/index';
 import { skills, getLevelLabel } from '../data/skills';

@@ -1,7 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2, AlertCircle, Sparkles, MessageCircle, Layers } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Sparkles, MessageCircle, Layers } from 'lucide-react';
 import { SEO } from '../components/seo/SEO';
-import { Section, SectionHeader, Card, Badge, TechTag } from '../components/ui/index';
+import { Section, Card, Badge } from '../components/ui/index';
 import { getProjectBySlug, getCategoryLabel, getStatusLabel } from '../data/projects';
 import { useWhatsApp } from '../hooks/useWhatsApp';
 

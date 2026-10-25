@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Home as HomeIcon, ArrowLeft } from 'lucide-react';
+import { Home as HomeIcon } from 'lucide-react';
 import { SEO } from '../components/seo/SEO';
 
 export default function NotFound() {

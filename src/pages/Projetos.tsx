@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Code2, Layers, ExternalLink } from 'lucide-react';
+import { ArrowRight, Layers } from 'lucide-react';
 import { SEO } from '../components/seo/SEO';
-import { Section, SectionHeader, Card, Badge, TechTag } from '../components/ui/index';
+import { Section, Card, Badge, TechTag } from '../components/ui/index';
 import { projects, getCategoryLabel, getStatusLabel } from '../data/projects';
 import type { ProjectCategory } from '../types';
 

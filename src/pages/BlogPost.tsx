@@ -1,7 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ArrowLeft, Clock, Calendar, User, Share2, MessageCircle } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, Share2, MessageCircle } from 'lucide-react';
 import { SEO } from '../components/seo/SEO';
-import { Section, Card, Badge } from '../components/ui/index';
+import { Card, Badge } from '../components/ui/index';
 import { getBlogPostBySlug, getCategoryLabel, blogPosts } from '../data/blog-posts';
 import { useWhatsApp } from '../hooks/useWhatsApp';
 
