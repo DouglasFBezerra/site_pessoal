@@ -94,6 +94,111 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: 'sites-clinicas-odontologicas',
+    title: 'Sites para Clínicas Odontológicas',
+    slug: 'sites-clinicas-odontologicas',
+    category: 'web',
+    status: 'prototipo',
+    shortDescription:
+      'Sites institucionais para consultórios odontológicos, com tratamentos, galeria, avaliações e agendamento pelo WhatsApp, atualizados pela própria clínica em um painel administrativo.',
+    description:
+      'Plataforma de site institucional para consultórios odontológicos que apresenta serviços, tratamentos, avaliações de pacientes e informações da clínica, com contato direto pelo WhatsApp e painel administrativo para o próprio profissional atualizar o conteúdo.',
+    problem:
+      'Muitos consultórios dependem de redes sociais e não têm um site que apresente os tratamentos, transmita confiança e facilite o agendamento. Quando têm, qualquer alteração de horário, foto ou serviço depende de um desenvolvedor.',
+    objective:
+      'Entregar um site profissional e responsivo em que a própria clínica consiga editar serviços, horários, contatos e fotos sem mexer em código, com agendamento de consultas em poucos cliques pelo WhatsApp.',
+    technologies: [
+      { name: 'React' },
+      { name: 'TypeScript' },
+      { name: 'TanStack Start' },
+      { name: 'Supabase' },
+      { name: 'Tailwind CSS' },
+    ],
+    features: [
+      'Páginas de apresentação, tratamentos, avaliações, localização e contato',
+      'Botão de agendamento e botão flutuante de WhatsApp',
+      'Conteúdo e imagens carregados dinamicamente do banco de dados',
+      'Painel administrativo protegido por login (rota /admin)',
+      'Edição de serviços, horários de atendimento, contatos e galeria pelo painel',
+      'Recuperação de senha do administrador',
+      'Layout responsivo para celular e computador',
+    ],
+    screenshots: [
+      {
+        url: '/projetos/site-clinica-1.jpg',
+        alt: 'Página inicial de um site para consultório odontológico com foto do consultório e botão de agendamento pelo WhatsApp',
+        caption: 'Site para consultório odontológico: página inicial com agendamento pelo WhatsApp',
+      },
+      {
+        url: '/projetos/site-clinica-2.jpg',
+        alt: 'Página inicial de um site de odontologia estética com layout elegante em tons de verde',
+        caption: 'Site para clínica de odontologia estética: identidade visual própria',
+      },
+    ],
+    learnings: [
+      'Modelagem de conteúdo editável no Supabase (serviços, horários, galeria)',
+      'Autenticação e recuperação de senha com Supabase Auth',
+      'Criação de painel administrativo para clientes sem conhecimento técnico',
+      'Adaptação de identidade visual para cada profissional',
+    ],
+    futurePlans: [
+      'Agendamento online integrado à agenda da clínica',
+      'Indicadores de acesso e cliques no WhatsApp',
+      'Blog com conteúdos sobre saúde bucal',
+    ],
+    featured: true,
+  },
+  {
+    id: 'cardapio-digital-pizzaria',
+    title: 'Cardápio Digital com Pedido pelo WhatsApp',
+    slug: 'cardapio-digital-pizzaria',
+    category: 'web',
+    status: 'prototipo',
+    shortDescription:
+      'Cardápio digital para pizzaria com busca, filtro por categoria, adicionais, carrinho e envio do pedido pelo WhatsApp.',
+    description:
+      'Cardápio digital para pizzarias em que o cliente pesquisa e filtra os produtos por categoria, vê preços e adicionais, monta o carrinho e finaliza o pedido pelo WhatsApp do estabelecimento.',
+    problem:
+      'Cardápios em PDF ou imagem são difíceis de navegar no celular, ficam desatualizados e obrigam o atendente a anotar o pedido manualmente no WhatsApp.',
+    objective:
+      'Oferecer um cardápio online rápido e fácil de atualizar, em que o cliente monte o pedido sozinho e o estabelecimento receba tudo organizado no WhatsApp.',
+    technologies: [
+      { name: 'React' },
+      { name: 'TypeScript' },
+      { name: 'Supabase' },
+      { name: 'Tailwind CSS' },
+    ],
+    features: [
+      'Busca por nome ou ingrediente',
+      'Filtro por categorias de produtos',
+      'Preços e adicionais por produto',
+      'Carrinho de compras',
+      'Finalização do pedido pelo WhatsApp',
+      'Produtos, categorias, adicionais e configurações gerenciados no banco de dados',
+      'Controle de acesso por perfis de usuário',
+      'Navegação responsiva otimizada para celular',
+    ],
+    screenshots: [
+      {
+        url: '/projetos/cardapio-pizzaria.jpg',
+        alt: 'Tela inicial de um cardápio digital de pizzaria com chamada para pedir, busca por ingrediente e filtro de categorias',
+        caption: 'Cardápio digital: tela inicial com busca e filtro por categoria',
+      },
+    ],
+    learnings: [
+      'Modelagem de produtos, categorias e adicionais no Supabase',
+      'Controle de permissões por perfil de usuário',
+      'Geração de mensagem de pedido formatada para o WhatsApp',
+      'Interface pensada para uso no celular',
+    ],
+    futurePlans: [
+      'Cálculo de taxa de entrega por região',
+      'Painel com pedidos e produtos mais vendidos',
+      'Cupons de desconto',
+    ],
+    featured: true,
+  },
+  {
     id: 'site-institucional-demo',
     title: 'Site Institucional — Demonstração',
     slug: 'site-institucional-demo',

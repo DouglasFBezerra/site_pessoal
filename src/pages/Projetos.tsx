@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Layers } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { SEO } from '../components/seo/SEO';
 import { Section, Card, Badge, TechTag } from '../components/ui/index';
 import { projects, getCategoryLabel, getStatusLabel } from '../data/projects';
@@ -72,6 +72,16 @@ export default function Projetos() {
           {filteredProjects.map((project) => (
             <Card key={project.id} className="p-6 flex flex-col justify-between" hover>
               <div>
+                {project.screenshots[0] && (
+                  <Link to={`/projetos/${project.slug}`} tabIndex={-1} aria-hidden="true">
+                    <img
+                      src={project.screenshots[0].url}
+                      alt=""
+                      loading="lazy"
+                      className="mb-5 aspect-video w-full rounded-lg border border-white/10 object-cover object-top"
+                    />
+                  </Link>
+                )}
                 <div className="flex items-center justify-between mb-4">
                   <Badge variant="blue">{getCategoryLabel(project.category)}</Badge>
                   <Badge variant={statusBadgeVariant(project.status)}>
