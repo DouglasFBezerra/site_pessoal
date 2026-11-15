@@ -6,6 +6,7 @@ import {
   DEFAULT_OG_IMAGE,
   CONTACT_EMAIL,
   WHATSAPP_NUMBER,
+  SOCIAL_LINKS,
 } from '../../utils/constants';
 
 interface SEOProps {
@@ -57,7 +58,7 @@ export function SEO({
         email: CONTACT_EMAIL,
         availableLanguage: 'Portuguese',
       },
-      sameAs: [],
+      sameAs: [SOCIAL_LINKS.instagram, SOCIAL_LINKS.github, SOCIAL_LINKS.linkedin],
     },
     {
       '@context': 'https://schema.org',

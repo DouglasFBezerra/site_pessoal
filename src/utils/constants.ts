@@ -19,6 +19,7 @@ export const REGION = 'São Paulo, SP';
 
 // Social
 export const SOCIAL_LINKS = {
+  instagram: 'https://www.instagram.com/douglassolucoesdigital/',
   github: 'https://github.com/DouglasFBezerra',
   linkedin: 'https://www.linkedin.com/in/douglasbezerra0608/',
 };
