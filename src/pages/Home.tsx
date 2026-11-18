@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion, useReducedMotion } from 'framer-motion';
 import {
   Globe, LayoutDashboard, Zap, UtensilsCrossed,
   ArrowRight, CheckCircle2, ChevronDown, ChevronUp,
@@ -13,13 +14,11 @@ import { SITE_NAME, SITE_DESCRIPTION } from '../utils/constants';
 import { getFeaturedPosts } from '../data/blog-posts';
 import { homeFaqs } from '../data/faqs';
 
-// ─── 1. Cards de Identificação de Problemas ──────────────────────────────────
+// ─── 1. Identificação de problemas ───────────────────────────────────────────
 const problemCards = [
   {
     id: 'sites',
     icon: Globe,
-    badge: 'Presença Digital',
-    badgeColor: 'blue' as const,
     title: 'Precisa de mais presença na internet?',
     problem: 'Seus clientes pesquisam sua empresa na internet, mas não encontram um site com informações claras sobre seus serviços.',
     solution: 'Criação de sites profissionais, páginas comerciais e landing pages responsivas, com informações organizadas e formas de contato.',
@@ -31,16 +30,11 @@ const problemCards = [
     buttonText: 'Quero um site profissional',
     whatsappMessage: 'Olá! Preciso de mais presença na internet e gostaria de solicitar um orçamento para um site profissional.',
     serviceHref: '/criacao-de-sites',
-    serviceLinkText: 'Conhecer detalhes do serviço de sites',
-    colorClass: 'text-brand-blue',
-    bgClass: 'bg-brand-blue/10',
-    borderHover: 'hover:border-brand-blue/40',
+    serviceLinkText: 'Ver detalhes do serviço de sites',
   },
   {
     id: 'crm',
     icon: LayoutDashboard,
-    badge: 'Organização Comercial',
-    badgeColor: 'cyan' as const,
     title: 'Está perdendo o controle dos clientes?',
     problem: 'Contatos, orçamentos e negociações ficam espalhados em conversas de WhatsApp, planilhas e anotações soltas.',
     solution: 'Desenvolvimento de CRM personalizado com cadastro de clientes, funil de vendas, histórico de interações, acompanhamento de oportunidades e agendamentos.',
@@ -52,16 +46,11 @@ const problemCards = [
     buttonText: 'Quero um CRM personalizado',
     whatsappMessage: 'Olá! Estou perdendo o controle de contatos e orçamentos na minha empresa e gostaria de entender sobre um CRM personalizado.',
     serviceHref: '/desenvolvimento-crm',
-    serviceLinkText: 'Conhecer detalhes de sistemas CRM',
-    colorClass: 'text-brand-cyan',
-    bgClass: 'bg-brand-cyan/10',
-    borderHover: 'hover:border-brand-cyan/40',
+    serviceLinkText: 'Ver detalhes de sistemas CRM',
   },
   {
     id: 'automacao',
     icon: Zap,
-    badge: 'Produtividade & Tempo',
-    badgeColor: 'blue' as const,
     title: 'Perde muito tempo com tarefas manuais?',
     problem: 'Sua equipe repete tarefas rotineiras, copia informações manualmente entre sistemas e perde horas digitando as mesmas mensagens.',
     solution: 'Automações com n8n e integrações com APIs, webhooks, bancos de dados e WhatsApp (quando compatíveis e autorizadas).',
@@ -73,16 +62,11 @@ const problemCards = [
     buttonText: 'Quero automatizar meu negócio',
     whatsappMessage: 'Olá! Minha equipe gasta muito tempo com tarefas manuais repetitivas e gostaria de automatizar processos com n8n.',
     serviceHref: '/automacao-n8n',
-    serviceLinkText: 'Conhecer detalhes de automação n8n',
-    colorClass: 'text-purple-400',
-    bgClass: 'bg-purple-500/10',
-    borderHover: 'hover:border-purple-500/40',
+    serviceLinkText: 'Ver detalhes de automação n8n',
   },
   {
     id: 'cardapios',
     icon: UtensilsCrossed,
-    badge: 'Alimentação & Delivery',
-    badgeColor: 'green' as const,
     title: 'Precisa modernizar o cardápio do restaurante?',
     problem: 'O cardápio físico desgasta e encarece a cada mudança de preço, ou o PDF é difícil de ler e navegar no celular.',
     solution: 'Cardápio digital acessível diretamente por link e QR Code nas mesas, com categorias, fotos, produtos e informações organizadas.',
@@ -94,11 +78,16 @@ const problemCards = [
     buttonText: 'Quero um cardápio digital',
     whatsappMessage: 'Olá! Gostaria de modernizar o atendimento do meu restaurante/pizzaria com um cardápio digital via QR Code.',
     serviceHref: '/cardapios-digitais',
-    serviceLinkText: 'Conhecer detalhes de cardápios digitais',
-    colorClass: 'text-green-400',
-    bgClass: 'bg-green-500/10',
-    borderHover: 'hover:border-green-500/40',
+    serviceLinkText: 'Ver detalhes de cardápios digitais',
   },
+];
+
+// Atalhos de serviço exibidos no rodapé do hero
+const heroServices = [
+  { icon: Globe, label: 'Sites profissionais', href: '/criacao-de-sites' },
+  { icon: LayoutDashboard, label: 'Sistemas CRM', href: '/desenvolvimento-crm' },
+  { icon: Zap, label: 'Automação com n8n', href: '/automacao-n8n' },
+  { icon: UtensilsCrossed, label: 'Cardápios digitais', href: '/cardapios-digitais' },
 ];
 
 // ─── 2. Segmentos de Negócio ─────────────────────────────────────────────────
@@ -175,6 +164,7 @@ export default function Home() {
   const { open: openWhatsApp } = useWhatsApp();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const featuredPosts = getFeaturedPosts().slice(0, 3);
+  const reduceMotion = useReducedMotion();
 
   const homeJsonLd = {
     '@context': 'https://schema.org',
@@ -204,181 +194,183 @@ export default function Home() {
       />
 
       {/* ─── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[92vh] flex items-center pt-24 pb-16 bg-gradient-hero overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-brand-blue/5 rounded-full blur-3xl" />
-          <div className="absolute top-1/3 right-0 w-96 h-96 bg-brand-cyan/5 rounded-full blur-3xl" />
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,102,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,102,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
-        </div>
+      <section className="relative bg-brand-black pt-28 lg:pt-36 pb-0 overflow-hidden">
+        <div
+          className="absolute inset-x-0 top-0 h-[560px] pointer-events-none bg-[radial-gradient(ellipse_at_72%_0%,rgba(0,102,255,0.20),transparent_62%)]"
+          aria-hidden="true"
+        />
 
         <div className="section-container relative z-10">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7">
-              {/* Label */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-blue/10 border border-brand-blue/30 text-brand-cyan text-sm font-medium mb-6 animate-fade-in">
-                <span className="w-2 h-2 rounded-full bg-brand-cyan animate-pulse-slow" />
-                Soluções Digitais para Empresas
-              </div>
-
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 animate-slide-up text-balance">
-                Sites, sistemas CRM e{' '}
-                <span className="gradient-text">automações</span> para impulsionar seu negócio.
+          <div className="grid lg:grid-cols-12 gap-14 lg:gap-8 items-center">
+            <div className="lg:col-span-5">
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-[1.05] mb-6 text-balance">
+                Sites, sistemas CRM e automações para impulsionar seu negócio.
               </h1>
 
-              <p className="text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl animate-slide-up text-balance">
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-8 max-w-xl text-pretty">
                 A Douglas Soluções Digitais desenvolve soluções tecnológicas para empresas que desejam fortalecer sua presença on-line, organizar seus processos e melhorar o relacionamento com seus clientes.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 animate-slide-up">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <button
                   onClick={() => openWhatsApp('Olá! Conheci a Douglas Soluções Digitais pelo site e gostaria de conversar sobre um projeto.')}
-                  className="btn-primary text-base py-4 px-8 shadow-brand"
+                  className="btn-primary text-base py-3.5 px-6 whitespace-nowrap"
                 >
-                  <MessageCircle size={20} />
-                  Solicitar orçamento pelo WhatsApp
+                  <MessageCircle size={19} />
+                  Orçamento no WhatsApp
                 </button>
-                <Link to="/projetos" className="btn-secondary text-base py-4 px-8">
-                  Conhecer meus projetos
-                  <ArrowRight size={18} />
+                <Link to="/projetos" className="btn-secondary text-base py-3.5 px-6 whitespace-nowrap">
+                  Ver projetos
                 </Link>
               </div>
-
-              {/* Quick stats */}
-              <div className="flex flex-wrap gap-6 mt-10 pt-8 border-t border-white/10">
-                {[
-                  { value: '4', label: 'Áreas de atuação' },
-                  { value: 'SP', label: 'São Paulo + Atendimento Remoto' },
-                  { value: '100%', label: 'Projetos Responsivos' },
-                ].map((stat) => (
-                  <div key={stat.label}>
-                    <div className="text-2xl font-bold gradient-text">{stat.value}</div>
-                    <div className="text-xs text-slate-400">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
             </div>
 
-            {/* Brand Card Display */}
-            <div className="lg:col-span-5 flex justify-center">
-              <div className="relative group max-w-md w-full">
-                <div className="absolute -inset-1 bg-gradient-to-r from-brand-blue to-brand-cyan rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-500" />
-                <div className="relative glass-card overflow-hidden rounded-3xl border border-white/15 p-2 shadow-2xl">
+            {/* Projetos reais: CRM + fluxo n8n */}
+            <div className="lg:col-span-7 relative lg:pb-14">
+              <motion.figure
+                initial={reduceMotion ? false : { opacity: 0, y: 28 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className="relative"
+              >
+                <div className="rounded-xl overflow-hidden border border-white/15 shadow-[0_40px_90px_-30px_rgba(0,102,255,0.55)]">
+                  <div className="flex items-center gap-1.5 px-4 py-2.5 bg-brand-navy border-b border-white/10">
+                    <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                    <span className="ml-3 text-xs text-slate-400 font-mono truncate">
+                      CRM Odontológico — Dashboard
+                    </span>
+                  </div>
                   <img
-                    src="/brand-hero.jpg"
-                    alt="Douglas Soluções Digitais — Identidade Visual Oficial"
-                    className="w-full h-auto rounded-2xl object-cover"
+                    src="/projetos/crm-dashboard.jpg"
+                    alt="Painel do CRM Odontológico com indicadores de pacientes, consultas e orçamentos"
+                    width={1600}
+                    height={715}
+                    className="w-full h-auto block"
                     loading="eager"
                   />
-                  <div className="p-4 text-center">
-                    <p className="text-xs uppercase tracking-[0.25em] text-brand-cyan font-semibold">
-                      Ideias em tecnologia, resultados no seu negócio
-                    </p>
-                  </div>
                 </div>
-              </div>
+              </motion.figure>
+
+              <motion.figure
+                initial={reduceMotion ? false : { opacity: 0, y: 36 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                className="relative mt-5 lg:mt-0 lg:absolute lg:bottom-0 lg:-left-4 lg:w-[46%]"
+              >
+                <div className="rounded-lg overflow-hidden border border-white/20 bg-brand-black shadow-2xl">
+                  <img
+                    src="/projetos/n8n-clinica-mensagens.png"
+                    alt="Fluxo de automação n8n: atendimento no WhatsApp de uma clínica alimentando o CRM"
+                    width={1600}
+                    height={1190}
+                    className="w-full h-auto block"
+                    loading="eager"
+                  />
+                </div>
+                <figcaption className="mt-2 text-xs text-slate-400 max-w-xs">
+                  Fluxo n8n: o atendimento no WhatsApp alimenta o CRM.
+                </figcaption>
+              </motion.figure>
             </div>
           </div>
-        </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-600 animate-float pointer-events-none">
-          <ChevronDown size={20} />
+          {/* Atalhos dos serviços */}
+          <nav
+            aria-label="Serviços"
+            className="mt-16 lg:mt-24 grid grid-cols-2 lg:grid-cols-4 border-t border-white/10"
+          >
+            {heroServices.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className="group flex items-center gap-3 py-5 lg:px-6 lg:first:pl-0 text-slate-300 hover:text-white transition-colors lg:border-l lg:border-white/10 lg:first:border-l-0"
+                >
+                  <Icon size={20} className="text-brand-cyan flex-shrink-0" />
+                  <span className="font-medium text-sm">{item.label}</span>
+                  <ArrowRight
+                    size={14}
+                    className="ml-auto opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
+                  />
+                </Link>
+              );
+            })}
+          </nav>
         </div>
       </section>
 
-      {/* ─── 1. SEÇÃO DE IDENTIFICAÇÃO DE PROBLEMAS ─────────────────────────── */}
-      <Section dark id="problemas" className="relative border-t border-white/5">
-        <SectionHeader
-          label="Diagnóstico para seu negócio"
-          title="O que posso melhorar na sua empresa?"
-          description="Descubra como soluções digitais podem ajudar sua empresa a conquistar clientes, organizar processos e economizar tempo."
-        />
+      {/* ─── 1. IDENTIFICAÇÃO DE PROBLEMAS (seção clara) ─────────────────────── */}
+      <section id="problemas" className="bg-paper text-paper-ink py-20 lg:py-28">
+        <div className="section-container grid lg:grid-cols-12 gap-10 lg:gap-16">
+          <div className="lg:col-span-4">
+            <div className="lg:sticky lg:top-28">
+              <h2 className="text-3xl lg:text-5xl font-bold text-paper-ink text-balance mb-4">
+                O que posso melhorar na sua empresa?
+              </h2>
+              <p className="text-paper-muted text-lg leading-relaxed text-pretty">
+                Descubra como soluções digitais podem ajudar sua empresa a conquistar clientes, organizar processos e economizar tempo.
+              </p>
+            </div>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {problemCards.map((card) => {
-            const Icon = card.icon;
-            return (
-              <Card
-                key={card.id}
-                className={`p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 border ${card.borderHover}`}
-                hover
-              >
-                <div>
-                  {/* Topo do card: Ícone + Badge */}
-                  <div className="flex items-center justify-between gap-4 mb-5">
-                    <div className={`w-12 h-12 rounded-xl ${card.bgClass} flex items-center justify-center flex-shrink-0`}>
-                      <Icon size={24} className={card.colorClass} />
-                    </div>
-                    <Badge variant={card.badgeColor}>{card.badge}</Badge>
+          <div className="lg:col-span-8 divide-y divide-paper-line border-y border-paper-line">
+            {problemCards.map((card) => {
+              const Icon = card.icon;
+              return (
+                <article
+                  key={card.id}
+                  className="py-8 sm:py-10 grid sm:grid-cols-[auto_1fr] gap-x-6 gap-y-4"
+                >
+                  <div className="w-11 h-11 rounded-lg bg-brand-blue text-white flex items-center justify-center flex-shrink-0">
+                    <Icon size={22} />
                   </div>
 
-                  {/* Título do Card */}
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 leading-snug">
-                    {card.title}
-                  </h3>
-
-                  {/* Bloco: Problema */}
-                  <div className="mb-4 bg-red-500/5 border border-red-500/20 rounded-xl p-4">
-                    <span className="text-xs uppercase tracking-wider text-red-400 font-bold block mb-1">
-                      Problema
-                    </span>
-                    <p className="text-slate-300 text-sm leading-relaxed">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-paper-ink mb-3 leading-snug text-balance">
+                      {card.title}
+                    </h3>
+                    <p className="text-paper-muted leading-relaxed mb-3 text-pretty">
                       {card.problem}
                     </p>
-                  </div>
-
-                  {/* Bloco: Solução */}
-                  <div className="mb-4 bg-brand-blue/5 border border-brand-blue/20 rounded-xl p-4">
-                    <span className="text-xs uppercase tracking-wider text-brand-cyan font-bold block mb-1">
-                      Solução
-                    </span>
-                    <p className="text-slate-300 text-sm leading-relaxed">
+                    <p className="text-paper-ink leading-relaxed mb-5 text-pretty">
                       {card.solution}
                     </p>
-                  </div>
 
-                  {/* Bloco: Benefícios */}
-                  <div className="mb-6">
-                    <span className="text-xs uppercase tracking-wider text-slate-400 font-bold block mb-2.5">
-                      Benefícios diretos
-                    </span>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 mb-6">
                       {card.benefits.map((benefit, idx) => (
-                        <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-                          <CheckCircle2 size={16} className="text-brand-cyan flex-shrink-0 mt-0.5" />
+                        <li key={idx} className="flex items-start gap-2.5 text-sm text-paper-ink">
+                          <CheckCircle2 size={17} className="text-brand-blue flex-shrink-0 mt-0.5" />
                           <span>{benefit}</span>
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </div>
 
-                {/* Ações do Card: Botão WhatsApp + Link Interno */}
-                <div className="pt-4 border-t border-white/10 space-y-3">
-                  <button
-                    onClick={() => openWhatsApp(card.whatsappMessage)}
-                    className="btn-primary w-full text-sm py-3 justify-center shadow-brand-sm group"
-                  >
-                    <MessageCircle size={17} />
-                    <span>{card.buttonText}</span>
-                  </button>
-
-                  <div className="text-center">
-                    <Link
-                      to={card.serviceHref}
-                      className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-brand-cyan transition-colors"
-                    >
-                      {card.serviceLinkText}
-                      <ArrowRight size={13} />
-                    </Link>
+                    <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                      <button
+                        onClick={() => openWhatsApp(card.whatsappMessage)}
+                        className="btn-primary text-sm py-2.5 px-5"
+                      >
+                        <MessageCircle size={16} />
+                        {card.buttonText}
+                      </button>
+                      <Link
+                        to={card.serviceHref}
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue-dark hover:underline underline-offset-4"
+                      >
+                        {card.serviceLinkText}
+                        <ArrowRight size={14} />
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              </Card>
-            );
-          })}
+                </article>
+              );
+            })}
+          </div>
         </div>
-      </Section>
+      </section>
 
       {/* ─── 2. SEÇÃO POR SEGMENTO DE NEGÓCIO ───────────────────────────────── */}
       <Section id="segmentos">
