@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
 import {
-  Globe, LayoutDashboard, Zap, UtensilsCrossed,
+  Globe, LayoutDashboard, UtensilsCrossed,
   ArrowRight, CheckCircle2, ChevronDown, ChevronUp,
   MessageCircle, Scale, Stethoscope, Briefcase,
   AlertCircle, HelpCircle
@@ -49,20 +49,20 @@ const problemCards = [
     serviceLinkText: 'Ver detalhes de sistemas CRM',
   },
   {
-    id: 'automacao',
-    icon: Zap,
-    title: 'Perde muito tempo com tarefas manuais?',
-    problem: 'Sua equipe repete tarefas rotineiras, copia informações manualmente entre sistemas e perde horas digitando as mesmas mensagens.',
-    solution: 'Automações com n8n e integrações com APIs, webhooks, bancos de dados e WhatsApp (quando compatíveis e autorizadas).',
+    id: 'atendente',
+    icon: MessageCircle,
+    title: 'Perde clientes por demorar a responder no WhatsApp?',
+    problem: 'As mensagens chegam à noite, no fim de semana ou com a equipe ocupada, e o cliente interessado acaba procurando outra empresa.',
+    solution: 'Atendente de WhatsApp com inteligência artificial: responde na hora, tira dúvidas sobre seus serviços, coleta os dados do cliente, registra o contato no CRM e chama uma pessoa da equipe quando precisa (conforme as regras do WhatsApp).',
     benefits: [
-      'Reduzir drasticamente o trabalho manual repetitivo',
-      'Padronizar fluxos de atendimento e organização',
-      'Liberar tempo da equipe para focar no crescimento do negócio',
+      'Responder clientes a qualquer hora, inclusive fora do expediente',
+      'Não perder contatos por demora no retorno',
+      'Liberar a equipe para o que exige atenção humana',
     ],
-    buttonText: 'Quero automatizar meu negócio',
-    whatsappMessage: 'Olá! Minha equipe gasta muito tempo com tarefas manuais repetitivas e gostaria de automatizar processos com n8n.',
+    buttonText: 'Quero um atendente no WhatsApp',
+    whatsappMessage: 'Olá! Gostaria de saber como funciona um atendente automático de WhatsApp 24h para o meu negócio.',
     serviceHref: '/automacao-n8n',
-    serviceLinkText: 'Ver detalhes de automação n8n',
+    serviceLinkText: 'Ver detalhes do atendente de WhatsApp',
   },
   {
     id: 'cardapios',
@@ -86,7 +86,7 @@ const problemCards = [
 const heroServices = [
   { icon: Globe, label: 'Sites profissionais', href: '/criacao-de-sites' },
   { icon: LayoutDashboard, label: 'Sistemas CRM', href: '/desenvolvimento-crm' },
-  { icon: Zap, label: 'Automação com n8n', href: '/automacao-n8n' },
+  { icon: MessageCircle, label: 'Atendente WhatsApp 24h', href: '/automacao-n8n' },
   { icon: UtensilsCrossed, label: 'Cardápios digitais', href: '/cardapios-digitais' },
 ];
 
@@ -179,7 +179,7 @@ export default function Home() {
     serviceType: [
       'Criação de sites profissionais',
       'Desenvolvimento de sistemas CRM',
-      'Automação de processos com n8n',
+      'Atendente de WhatsApp 24h com inteligência artificial',
       'Cardápios digitais',
     ],
   };
@@ -187,8 +187,8 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Sites, CRM e Automações para Empresas"
-        description="Soluções digitais práticas para empresas e profissionais: criação de sites profissionais, sistemas CRM sob medida, automações com n8n e cardápios digitais."
+        title="Sites, CRM e Atendente de WhatsApp 24h para Empresas"
+        description="Soluções digitais práticas para empresas e profissionais: criação de sites profissionais, sistemas CRM sob medida, atendente de WhatsApp 24h com IA e cardápios digitais."
         canonical="/"
         jsonLd={homeJsonLd}
       />
@@ -204,7 +204,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-12 gap-14 lg:gap-8 items-center">
             <div className="lg:col-span-5">
               <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-[1.05] mb-6 text-balance">
-                Sites, sistemas CRM e automações para impulsionar seu negócio.
+                Sites, sistemas CRM e atendente de WhatsApp 24h para impulsionar seu negócio.
               </h1>
 
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-8 max-w-xl text-pretty">
@@ -262,7 +262,7 @@ export default function Home() {
                 <div className="rounded-lg overflow-hidden border border-white/20 bg-brand-black shadow-2xl">
                   <img
                     src="/projetos/n8n-clinica-mensagens.png"
-                    alt="Fluxo de automação n8n: atendimento no WhatsApp de uma clínica alimentando o CRM"
+                    alt="Fluxo do atendente de WhatsApp de uma clínica: separa pacientes de novos contatos, confirma consultas e registra no CRM"
                     width={1600}
                     height={1190}
                     className="w-full h-auto block"
@@ -270,7 +270,7 @@ export default function Home() {
                   />
                 </div>
                 <figcaption className="mt-2 text-xs text-slate-400 max-w-xs">
-                  Fluxo n8n: o atendimento no WhatsApp alimenta o CRM.
+                  Atendente de WhatsApp de uma clínica, feito com n8n, alimentando o CRM.
                 </figcaption>
               </motion.figure>
             </div>

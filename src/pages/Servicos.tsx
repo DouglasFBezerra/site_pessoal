@@ -41,8 +41,8 @@ export default function Servicos() {
   return (
     <>
       <SEO
-        title="Serviços — Sites, CRM, Automação e Cardápios Digitais"
-        description="Conheça os serviços da Douglas Soluções Digitais: criação de sites profissionais, sistemas CRM personalizados, automação com n8n e cardápios digitais para restaurantes."
+        title="Serviços — Sites, CRM, Atendente de WhatsApp 24h e Cardápios Digitais"
+        description="Conheça os serviços da Douglas Soluções Digitais: criação de sites profissionais, sistemas CRM personalizados, atendente de WhatsApp 24h com IA e cardápios digitais para restaurantes."
         canonical="/servicos"
         jsonLd={jsonLd}
       />
