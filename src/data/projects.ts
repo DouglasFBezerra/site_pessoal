@@ -419,7 +419,7 @@ export const getCategoryLabel = (category: string): string => {
   const labels: Record<string, string> = {
     web: 'Desenvolvimento Web',
     crm: 'CRM e Gestão',
-    automacao: 'Automação',
+    automacao: 'Atendente WhatsApp e Automação',
     api: 'Integração de APIs',
     'banco-de-dados': 'Banco de Dados',
     'inteligencia-artificial': 'Inteligência Artificial',
