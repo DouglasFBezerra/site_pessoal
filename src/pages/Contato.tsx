@@ -25,7 +25,7 @@ export default function Contato() {
     const servicoFormatado: Record<string, string> = {
       'criacao-de-sites': 'Criação de Site Profissional',
       'desenvolvimento-crm': 'Desenvolvimento de CRM',
-      'automacao-n8n': 'Automação com n8n',
+      'automacao-n8n': 'Atendente de WhatsApp 24h e automações',
       'cardapios-digitais': 'Cardápio Digital',
       'outro': 'Outro projeto/parceria',
     };
@@ -172,7 +172,7 @@ ${form.empresa ? `*Empresa:* ${form.empresa}\n` : ''}*Serviço:* ${servicoFormat
                     >
                       <option value="criacao-de-sites">Criação de Site Profissional</option>
                       <option value="desenvolvimento-crm">Desenvolvimento de Sistema CRM</option>
-                      <option value="automacao-n8n">Automação de Processos com n8n</option>
+                      <option value="automacao-n8n">Atendente de WhatsApp 24h e automações</option>
                       <option value="cardapios-digitais">Cardápio Digital</option>
                       <option value="outro">Outro / Projeto Sob Medida</option>
                     </select>

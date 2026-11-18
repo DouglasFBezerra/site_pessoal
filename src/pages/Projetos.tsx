@@ -8,8 +8,8 @@ import type { ProjectCategory } from '../types';
 
 const categories: { label: string; value: 'todas' | ProjectCategory }[] = [
   { label: 'Todos os Projetos', value: 'todas' },
+  { label: 'Atendente WhatsApp 24h', value: 'automacao' },
   { label: 'CRM e Gestão', value: 'crm' },
-  { label: 'Automação', value: 'automacao' },
   { label: 'Desenvolvimento Web', value: 'web' },
 ];
 
@@ -33,7 +33,7 @@ export default function Projetos() {
     <>
       <SEO
         title="Projetos e Portfólio — Soluções Reais e Estudos Práticos"
-        description="Conheça os projetos desenvolvidos e em andamento: CRM Odontológico, fluxos de automação com n8n e aplicações web modernas."
+        description="Conheça os projetos desenvolvidos e em andamento: atendentes de WhatsApp com IA para clínicas e delivery, CRM Odontológico, automações com n8n e aplicações web modernas."
         canonical="/projetos"
       />
 
