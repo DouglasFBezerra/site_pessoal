@@ -132,7 +132,7 @@ interface SectionHeaderProps {
 }
 
 export function SectionHeader({
-  label,
+  label: _label,
   title,
   description,
   center = false,
@@ -140,12 +140,19 @@ export function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <div className={`mb-12 lg:mb-16 ${center ? 'text-center' : ''} ${className}`}>
-      {label && <span className="section-label">{label}</span>}
-      <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 text-balance">
+      <h2
+        className={`text-3xl lg:text-5xl font-bold text-white mb-4 text-balance max-w-3xl ${
+          center ? 'mx-auto' : ''
+        }`}
+      >
         {title}
       </h2>
       {description && (
-        <p className="text-slate-400 text-lg max-w-2xl leading-relaxed text-balance">
+        <p
+          className={`text-slate-400 text-lg max-w-2xl leading-relaxed text-pretty ${
+            center ? 'mx-auto' : ''
+          }`}
+        >
           {description}
         </p>
       )}

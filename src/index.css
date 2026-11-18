@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -20,6 +20,27 @@
 
   * {
     @apply border-slate-800;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    letter-spacing: -0.02em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 
   ::selection {
@@ -51,7 +72,7 @@
 @layer components {
   /* Glass card effect */
   .glass-card {
-    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl;
+    @apply bg-brand-navy-light/50 border border-white/10 rounded-2xl;
   }
 
   /* Gradient text */
@@ -66,11 +87,11 @@
 
   /* Button base */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-blue hover:bg-brand-blue-dark text-white font-semibold rounded-xl transition-all duration-200 shadow-brand hover:shadow-brand focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-blue hover:bg-brand-blue-light text-white font-semibold rounded-lg transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent border border-brand-blue/50 hover:border-brand-blue text-brand-blue hover:text-white hover:bg-brand-blue/10 font-semibold rounded-xl transition-all duration-200;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent border border-white/25 hover:border-white/60 text-white hover:bg-white/5 font-semibold rounded-lg transition-colors duration-200;
   }
 
   .btn-ghost {

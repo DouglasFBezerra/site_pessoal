@@ -18,9 +18,16 @@ export default {
           'cyan-dark': '#00AACC',
           'cyan-light': '#66E2FF',
         },
+        paper: {
+          DEFAULT: '#EDF2F9',
+          line: '#C9D6E8',
+          ink: '#0A1628',
+          muted: '#4A5B73',
+        },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['Instrument Sans', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Bricolage Grotesque', 'Instrument Sans', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       backgroundImage: {
