@@ -8,6 +8,7 @@ const footerLinks = {
     { label: 'Criação de Sites', href: '/criacao-de-sites' },
     { label: 'Sistemas CRM', href: '/desenvolvimento-crm' },
     { label: 'Atendente WhatsApp 24h', href: '/automacao-n8n' },
+    { label: 'Automação com n8n', href: '/automacao-n8n' },
     { label: 'Cardápios Digitais', href: '/cardapios-digitais' },
   ],
   site: [
