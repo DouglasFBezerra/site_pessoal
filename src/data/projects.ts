@@ -393,7 +393,23 @@ export const projects: Project[] = [
       'Blog estático com artigos em TypeScript',
       'Performance otimizada',
     ],
-    screenshots: [],
+    screenshots: [
+      {
+        url: '/projetos/site-home.jpg',
+        alt: 'Página inicial do site da Douglas Soluções Digitais, com o título sobre sites, CRM e atendente de WhatsApp 24h',
+        caption: 'Página inicial',
+      },
+      {
+        url: '/projetos/site-servicos.jpg',
+        alt: 'Página de serviços do site, com a lista de serviços e seus recursos',
+        caption: 'Página de serviços',
+      },
+      {
+        url: '/projetos/site-projetos.jpg',
+        alt: 'Página de projetos do site, com o CRM Odontológico em destaque',
+        caption: 'Página de projetos',
+      },
+    ],
     learnings: [
       'Estruturação de projetos React de médio porte',
       'Implementação de SEO técnico sem Next.js',
