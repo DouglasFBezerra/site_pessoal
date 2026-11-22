@@ -85,7 +85,7 @@ export function Footer() {
             </h3>
             <ul className="space-y-2.5">
               {footerLinks.services.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link
                     to={link.href}
                     className="text-sm text-slate-400 hover:text-brand-cyan transition-colors"
@@ -104,7 +104,7 @@ export function Footer() {
             </h3>
             <ul className="space-y-2.5">
               {footerLinks.site.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link
                     to={link.href}
                     className="text-sm text-slate-400 hover:text-brand-cyan transition-colors"
@@ -161,7 +161,7 @@ export function Footer() {
           <div className="flex gap-4">
             {footerLinks.legal.map((link) => (
               <Link
-                key={link.href}
+                key={link.label}
                 to={link.href}
                 className="hover:text-slate-300 transition-colors"
               >

@@ -82,7 +82,7 @@ export function Header() {
                     >
                       {item.children.map((child) => (
                         <NavLink
-                          key={child.href}
+                          key={child.label}
                           to={child.href}
                           role="menuitem"
                           className={({ isActive }: { isActive: boolean }) =>
@@ -167,7 +167,7 @@ export function Header() {
                   <div className="ml-4 flex flex-col gap-0.5 mt-1">
                     {item.children.map((child) => (
                       <NavLink
-                        key={child.href}
+                        key={child.label}
                         to={child.href}
                         className={({ isActive }: { isActive: boolean }) =>
                           `block px-3 py-2.5 text-sm rounded-lg transition-colors ${
