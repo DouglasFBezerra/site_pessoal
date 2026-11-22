@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Globe, LayoutDashboard, Zap, UtensilsCrossed, ArrowRight, MessageCircle } from 'lucide-react';
+import { Globe, LayoutDashboard, Zap, UtensilsCrossed, ArrowRight, MessageCircle, CheckCircle2 } from 'lucide-react';
 import { SEO } from '../components/seo/SEO';
-import { Section, Card } from '../components/ui/index';
+import { Section } from '../components/ui/index';
 import { services } from '../data/services';
 import { useWhatsApp } from '../hooks/useWhatsApp';
 
@@ -10,13 +10,6 @@ const serviceIcons: Record<string, React.ElementType> = {
   LayoutDashboard,
   Zap,
   UtensilsCrossed,
-};
-
-const serviceColors: Record<string, { icon: string; bg: string }> = {
-  blue: { icon: 'text-brand-blue', bg: 'bg-brand-blue/10' },
-  cyan: { icon: 'text-brand-cyan', bg: 'bg-brand-cyan/10' },
-  purple: { icon: 'text-purple-400', bg: 'bg-purple-500/10' },
-  green: { icon: 'text-green-400', bg: 'bg-green-500/10' },
 };
 
 export default function Servicos() {
@@ -50,7 +43,6 @@ export default function Servicos() {
       {/* Hero */}
       <section className="pt-32 pb-20 bg-gradient-hero">
         <div className="section-container">
-          <span className="section-label">Serviços</span>
           <h1 className="text-4xl lg:text-5xl font-extrabold text-white mb-6 max-w-3xl text-balance">
             Soluções digitais para o seu negócio crescer
           </h1>
@@ -60,45 +52,53 @@ export default function Servicos() {
         </div>
       </section>
 
-      {/* Services grid */}
-      <Section dark>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {services.map((service) => {
-            const Icon = serviceIcons[service.icon] || Globe;
-            const colors = serviceColors[service.color] || serviceColors.blue;
-            return (
-              <Card key={service.id} className="p-8" hover>
-                <div className={`w-14 h-14 ${colors.bg} rounded-xl flex items-center justify-center mb-6`}>
-                  <Icon size={28} className={colors.icon} />
-                </div>
-                <h2 className="text-xl font-bold text-white mb-3">{service.title}</h2>
-                <p className="text-slate-400 leading-relaxed mb-6">{service.description}</p>
-
-                <ul className="space-y-2 mb-8">
-                  {service.features.slice(0, 4).map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-sm text-slate-300">
-                      <span className="w-1.5 h-1.5 rounded-full bg-brand-blue flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                  {service.features.length > 4 && (
-                    <li className="text-sm text-slate-500">
-                      +{service.features.length - 4} funcionalidades...
-                    </li>
-                  )}
-                </ul>
-
-                <Link
-                  to={`/${service.slug}`}
-                  className="btn-secondary text-sm w-full justify-center"
+      {/* Lista de serviços (seção clara) */}
+      <section className="bg-paper text-paper-ink py-16 lg:py-24">
+        <div className="section-container">
+          <div className="divide-y divide-paper-line border-y border-paper-line">
+            {services.map((service) => {
+              const Icon = serviceIcons[service.icon] || Globe;
+              return (
+                <article
+                  key={service.id}
+                  className="py-10 lg:py-12 grid lg:grid-cols-12 gap-x-10 gap-y-6"
                 >
-                  Ver detalhes do serviço <ArrowRight size={14} />
-                </Link>
-              </Card>
-            );
-          })}
+                  <div className="lg:col-span-5 flex gap-5">
+                    <div className="w-12 h-12 rounded-lg bg-brand-blue text-white flex items-center justify-center flex-shrink-0">
+                      <Icon size={24} />
+                    </div>
+                    <div>
+                      <h2 className="text-2xl lg:text-3xl font-bold text-paper-ink mb-3 text-balance">
+                        {service.title}
+                      </h2>
+                      <p className="text-paper-muted leading-relaxed text-pretty">
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="lg:col-span-7 lg:pl-6">
+                    <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-7">
+                      {service.features.slice(0, 6).map((feature) => (
+                        <li key={feature} className="flex items-start gap-2.5 text-sm text-paper-ink">
+                          <CheckCircle2 size={17} className="text-brand-blue flex-shrink-0 mt-0.5" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      to={`/${service.slug}`}
+                      className="inline-flex items-center gap-1.5 font-semibold text-brand-blue-dark hover:underline underline-offset-4"
+                    >
+                      Ver detalhes do serviço <ArrowRight size={15} />
+                    </Link>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
         </div>
-      </Section>
+      </section>
 
       {/* CTA */}
       <Section className="text-center">
