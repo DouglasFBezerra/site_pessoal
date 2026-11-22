@@ -152,60 +152,78 @@ export const services: Service[] = [
   },
   {
     id: 'automacao-n8n',
-    title: 'Automação com n8n',
-    shortTitle: 'Automação n8n',
+    title: 'Atendente de WhatsApp 24h e automações',
+    shortTitle: 'Atendente WhatsApp 24h',
     slug: 'automacao-n8n',
     description:
-      'Automação de tarefas repetitivas e integração entre sistemas com n8n, reduzindo trabalho manual e conectando suas ferramentas.',
+      'Atendente de WhatsApp com inteligência artificial que responde clientes a qualquer hora, registra contatos no CRM e avisa sua equipe quando precisa de uma pessoa. Construído com n8n.',
     longDescription:
-      'O n8n é uma plataforma de automação open source que permite conectar sistemas, automatizar tarefas repetitivas e criar fluxos inteligentes de trabalho, sem depender de plataformas pagas por execução.',
+      'Um atendente automático que responde seus clientes no WhatsApp a qualquer hora, tira dúvidas sobre seus serviços, coleta os dados do contato e registra tudo no CRM. Por trás, uso o n8n, uma plataforma de automação open source, que também permite conectar sistemas e eliminar tarefas manuais repetitivas.',
     icon: 'Zap',
     color: 'purple',
     features: [
-      'Automação de tarefas repetitivas',
-      'Integração entre sistemas e APIs',
-      'Fluxos de captação e organização de leads',
-      'Notificações e lembretes automatizados',
-      'Integrações com bancos de dados',
-      'Processamento automático de formulários',
+      'Atendimento no WhatsApp 24 horas, inclusive fora do expediente',
+      'Respostas sobre serviços, horários e endereço do seu negócio',
+      'Coleta de nome, telefone e necessidade do cliente',
+      'Registro automático de contatos e agendamentos no CRM',
+      'Lembretes e confirmações de consulta ou pedido',
+      'Aviso à equipe quando um atendimento precisa de uma pessoa',
+      'Automação de tarefas repetitivas e integração entre sistemas',
     ],
     audience: [
-      'Empresas com processos repetitivos',
-      'Times de vendas e marketing',
       'Clínicas e consultórios',
-      'E-commerces e lojas',
+      'Restaurantes, pizzarias e deliveries',
+      'Escritórios e prestadores de serviço',
+      'Lojas e pequenas empresas que recebem pedidos pelo WhatsApp',
     ],
     benefits: [
-      'Redução de tarefas manuais',
-      'Menor risco de erros humanos',
-      'Agilidade no processamento de informações',
-      'Integração entre ferramentas já utilizadas',
+      'Não perder clientes por demora na resposta',
+      'Atendimento mesmo à noite e nos fins de semana',
+      'Equipe livre para o que exige atenção humana',
+      'Contatos organizados no CRM, sem anotações soltas',
     ],
     process: [
       {
         step: 1,
-        title: 'Mapeamento de processos',
+        title: 'Entendimento do atendimento',
         description:
-          'Identificamos quais tarefas podem ser automatizadas e qual o impacto esperado.',
+          'Levanto o que seus clientes mais perguntam e o que o atendente pode ou não responder.',
       },
       {
         step: 2,
-        title: 'Desenvolvimento dos fluxos',
-        description: 'Construímos os workflows no n8n com as integrações necessárias.',
+        title: 'Desenvolvimento do atendente',
+        description:
+          'Construo o atendente e as integrações com WhatsApp e CRM, usando o n8n.',
       },
       {
         step: 3,
-        title: 'Testes e validação',
+        title: 'Testes com conversas reais',
         description:
-          'Testamos os fluxos em cenários reais antes de ativá-los em produção.',
+          'Testamos o atendente em situações do dia a dia antes de ativá-lo para os clientes.',
       },
       {
         step: 4,
-        title: 'Implantação e documentação',
-        description: 'Publicamos os fluxos e documentamos seu funcionamento.',
+        title: 'Ativação e acompanhamento',
+        description:
+          'Publico o atendente, documento o funcionamento e ajusto conforme as conversas reais.',
       },
     ],
     faqs: [
+      {
+        question: 'O atendente de WhatsApp responde sozinho?',
+        answer:
+          'Sim. Um agente de inteligência artificial responde as mensagens seguindo as informações e regras do seu negócio, como serviços, horários e endereço. Quando o assunto foge do combinado, ele pode avisar a equipe para que uma pessoa assuma a conversa.',
+      },
+      {
+        question: 'Funciona de madrugada e nos fins de semana?',
+        answer:
+          'Sim, o atendente fica ativo 24 horas. O que depende de uma pessoa, como fechar um orçamento, fica registrado para a equipe retomar no horário comercial.',
+      },
+      {
+        question: 'O que preciso para começar?',
+        answer:
+          'Um número de WhatsApp para o atendimento, as informações do seu negócio e a definição do que o atendente pode ou não responder. A conexão com o WhatsApp segue as regras da plataforma e depende de autorização.',
+      },
       {
         question: 'O n8n tem custo?',
         answer:
